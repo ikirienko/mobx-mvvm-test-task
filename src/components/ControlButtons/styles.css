@@ -1,0 +1,11 @@
+.control-buttons {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

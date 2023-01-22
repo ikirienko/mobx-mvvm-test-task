@@ -1,0 +1,21 @@
+.autocomplete {
+  width: max(50vw, 400px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.input {
+  width: 500px;
+  box-sizing: border-box;
+}
+
+.prompts-container {
+  width: 100%;
+  background: white;
+  box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  position: absolute;
+  box-sizing: border-box;
+  top: 31px;
+  z-index: 1;
+}
