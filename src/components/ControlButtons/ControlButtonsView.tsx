@@ -18,7 +18,7 @@ const ControlButtonsView = ({
       {!!leftButtonsProps?.length && (
         <div className="buttons">
           {leftButtonsProps.map((buttonProps) => (
-            <Button {...buttonProps} inputViewModel={viewModel} />
+            <Button key={buttonProps.text} {...buttonProps} inputViewModel={viewModel} />
           ))}
         </div>
       )}
@@ -26,7 +26,7 @@ const ControlButtonsView = ({
       {!!rightButtonsProps?.length && (
         <div className="buttons">
           {rightButtonsProps.map((buttonProps) => (
-            <Button {...buttonProps} inputViewModel={viewModel} />
+            <Button key={buttonProps.text} {...buttonProps} inputViewModel={viewModel} />
           ))}
         </div>
       )}

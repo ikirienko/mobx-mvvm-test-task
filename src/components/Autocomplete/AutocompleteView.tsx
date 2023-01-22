@@ -11,9 +11,12 @@ interface IAutocompleteViewProps<T extends { name?: string }> {
 const AutocompleteView: <T extends { name?: string }>(
   props: IAutocompleteViewProps<T>
 ) => React.ReactElement | null = observer(({ viewModel }) => {
-
   return (
-    <div className="autocomplete">
+    <div
+      className="autocomplete"
+      onBlur={() => setTimeout(() => viewModel.clearItems(), 100)}
+      onFocus={() => viewModel.loadItems()}
+    >
       <Input className="input" viewModel={viewModel} />
       <div className="prompts-container">
         <Prompts viewModel={viewModel} variant="country" />
