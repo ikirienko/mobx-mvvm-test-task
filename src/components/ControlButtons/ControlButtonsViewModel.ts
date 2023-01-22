@@ -9,7 +9,6 @@ export class ControlButtonsViewModel implements IControlledInput {
   }
 
   setInputValue = (value: string) => {
-    console.log("DDDDDD inputValue:", value);
     this.inputValue = value;
   };
 }

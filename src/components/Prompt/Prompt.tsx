@@ -18,6 +18,7 @@ const Prompt = observer(
           <img
             src={(item as unknown as CountryInfo).flag}
             alt={`Flag of ${(item as unknown as CountryInfo).name}`}
+            width="50px"
           />
         </div>
       );

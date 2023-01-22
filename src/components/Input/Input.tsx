@@ -13,7 +13,6 @@ interface IInputProps
 
 const Input = observer(({ viewModel }: IInputProps) => {
   const { inputValue, setInputValue } = viewModel;
-  console.log("inputValue:", inputValue, setInputValue);
 
   return (
     <input

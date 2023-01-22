@@ -11,7 +11,6 @@ interface IAutocompleteViewProps<T extends { name?: string }> {
 const AutocompleteView: <T extends { name?: string }>(
   props: IAutocompleteViewProps<T>
 ) => React.ReactElement | null = observer(({ viewModel }) => {
-  console.log("AutocompleteView render");
 
   return (
     <div className="autocomplete">

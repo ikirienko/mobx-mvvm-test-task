@@ -1,4 +1,3 @@
-import { toJS } from "mobx";
 import { observer } from "mobx-react-lite";
 import { AutocompleteViewModel } from "./Autocomplete/AutocompleteViewModel";
 import Prompt, { IPromptProps } from "./Prompt/Prompt";
@@ -14,7 +13,6 @@ const Prompts = observer(
     variant,
   }: IPromptsInterface<T>) => {
     const { items, setInputValue, clearItems } = viewModel;
-    console.log("items:", toJS(items));
 
     return (
       <div>

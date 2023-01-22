@@ -14,7 +14,6 @@ const Autocomplete = <T extends { name?: string }>({
   const viewModel = useInstance(
     new AutocompleteViewModel<T>(fetchItemsByValue, maxPromptsAmount)
   );
-  console.log("viewModel:", viewModel);
   return <AutocompleteView viewModel={viewModel} />;
 };
 

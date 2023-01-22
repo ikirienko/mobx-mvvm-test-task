@@ -21,15 +21,12 @@ export class AutocompleteViewModel<T extends { name?: string }>
     this.maxPromptsAmount = maxPromptsAmount;
     reaction(
       () => this.inputValue,
-      (data) => {
-        console.log("reaction is invoked, data:", data, this.items);
-        this.loadItems();
-      }
+      (data) => this.loadItems(),
+      { delay: 200 }
     );
   }
 
   setInputValue = (value: string) => {
-    console.log("DDDDDD inputValue:", value);
     this.inputValue = value;
   };
 
@@ -38,7 +35,6 @@ export class AutocompleteViewModel<T extends { name?: string }>
   };
 
   loadItems = () => {
-    console.log("loadItems invoked");
     if (!this.pauseAutocomplete) {
       this.fetchItemsByValue(this.inputValue).then((res) => {
         runInAction(() => {
