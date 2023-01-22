@@ -1,7 +1,7 @@
 import { makeAutoObservable, reaction, runInAction } from "mobx";
 import { IControlledInput } from "../../types";
 
-export class AutocompleteViewModel<T extends { name: string }>
+export class AutocompleteViewModel<T extends { name?: string }>
   implements IControlledInput
 {
   items: T[] = [];
