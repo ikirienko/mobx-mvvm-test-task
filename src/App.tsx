@@ -6,6 +6,7 @@ import "./App.css";
 function App() {
   return (
     <div className="container">
+      <h3>1. Контролы с кнопками</h3>
       <ControlButtons
         rightButtonsProps={[
           {
@@ -46,6 +47,7 @@ function App() {
           },
         ]}
       />
+      <h3>2. Автокомплиты</h3>
       <Autocomplete<CountryInfo>
         maxPromptsAmount={3}
         fetchItemsByValue={getCountryByName}

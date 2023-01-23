@@ -9,3 +9,15 @@
   flex-direction: column;
   gap: 10px;
 }
+
+@media screen and (max-width: 768px) {
+  .control-buttons {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .buttons {
+    gap: 15px;
+  }
+}
