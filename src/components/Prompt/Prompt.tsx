@@ -2,14 +2,14 @@ import { observer } from "mobx-react-lite";
 import { CountryInfo } from "../../api/apiService";
 import "./styles.css";
 
-export interface IPromptProps<T extends { name?: string }> {
+export interface IPromptProps<T extends { name: string }> {
   variant: "country";
   item: T;
   onClick?: () => void;
 }
 
 const Prompt = observer(
-  <T extends { name?: string }>({ variant, item, onClick }: IPromptProps<T>) => {
+  <T extends { name: string }>({ variant, item, onClick }: IPromptProps<T>) => {
     if (variant === "country") {
       return (
         <div className="prompt" onClick={() => onClick && onClick()}>

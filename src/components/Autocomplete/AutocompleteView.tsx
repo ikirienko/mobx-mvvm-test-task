@@ -4,11 +4,11 @@ import Prompts from "../Prompts";
 import { AutocompleteViewModel } from "./AutocompleteViewModel";
 import "./styles.css";
 
-interface IAutocompleteViewProps<T extends { name?: string }> {
+interface IAutocompleteViewProps<T extends { name: string }> {
   viewModel: AutocompleteViewModel<T>;
 }
 
-const AutocompleteView: <T extends { name?: string }>(
+const AutocompleteView: <T extends { name: string }>(
   props: IAutocompleteViewProps<T>
 ) => React.ReactElement | null = observer(({ viewModel }) => {
   return (

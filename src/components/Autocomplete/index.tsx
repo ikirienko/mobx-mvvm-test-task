@@ -7,7 +7,7 @@ interface IAutocompleteProps<T> {
   fetchItemsByValue: (value: string) => Promise<T[]>;
 }
 
-const Autocomplete = <T extends { name?: string }>({
+const Autocomplete = <T extends { name: string }>({
   maxPromptsAmount,
   fetchItemsByValue,
 }: IAutocompleteProps<T>) => {

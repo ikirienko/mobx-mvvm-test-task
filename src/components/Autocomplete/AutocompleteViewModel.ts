@@ -1,10 +1,11 @@
 import { makeAutoObservable, reaction, runInAction } from "mobx";
 import { IControlledInput } from "../../types";
+import { getUniqueObjsByName } from "../../utils";
 
-export class AutocompleteViewModel<T extends { name?: string }>
+export class AutocompleteViewModel<T extends { name: string }>
   implements IControlledInput
 {
-  items: T[] = [];
+  rawItems: T[] = [];
   pauseAutocomplete = false;
   inputValue: string = "";
   maxPromptsAmount = 5;
@@ -30,15 +31,19 @@ export class AutocompleteViewModel<T extends { name?: string }>
     this.inputValue = value;
   };
 
+  get items() {
+    return getUniqueObjsByName(this.rawItems).slice(0, this.maxPromptsAmount);
+  }
+
   clearItems = () => {
-    this.items = [];
+    this.rawItems = [];
   };
 
   loadItems = () => {
     if (!this.pauseAutocomplete) {
       this.fetchItemsByValue(this.inputValue).then((res) => {
         runInAction(() => {
-          this.items = res.slice(0, this.maxPromptsAmount);
+          this.rawItems = res;
         });
       });
     } else {
