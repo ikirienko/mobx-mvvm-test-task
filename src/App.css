@@ -1,4 +1,5 @@
 .container {
+  box-sizing: border-box;
   width: max(50vw, 400px);
   display: flex;
   padding: 30px;
